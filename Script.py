@@ -1,12 +1,11 @@
 #!/bin/python3
-
 from tkinter import *
 from tkinter.ttk import *
 import subprocess
 import os
 
 def airplus(root):
-    subprocess.Popen('dex "/home/noah/.local/share/applications/HabboAirPlus.desktop"', shell=True)
+    subprocess.Popen("/usr/bin/habbo-airplus/Habbo", shell=False)
     root.destroy()
 
 def wine(root):
@@ -14,7 +13,7 @@ def wine(root):
     root.destroy()
 
 def website():
-    os.system('kde-open "https://habbo.com/"')
+    os.system("xdg-open 'https://habbo.com/'")
 
 
 root = Tk()
@@ -23,7 +22,7 @@ root.resizable(width=False, height=False)
 frame = Frame(root,padding=10)
 frame.grid()
 
-Btn1 = Button(root, text="HabboAirPlus", command=lambda: airplus(root), width=40)
+Btn1 = Button(root, text="Habbo AirPlus", command=lambda: airplus(root), width=40)
 Btn1.grid(column=0,row=0)
 
 Btn2 = Button(root, text="Wine", command=lambda: wine(root), width=40)
